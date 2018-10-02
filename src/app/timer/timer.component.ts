@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Subscription, Observable} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
+
 @Component({
   selector: 'timer',
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.css']
 })
-export class TimerComponent implements OnInit {
+export class TimerComponent implements OnInit, OnDestroy {
   private time = 0;
   private seconds = 0;
   private minutes = 0;
@@ -30,10 +31,19 @@ export class TimerComponent implements OnInit {
   //task ending time variable
   endedAt = '';
 
-  constructor() { 
-  }
+  constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy(){
+    /*if (this.activeStopBtn===true){
+      if (confirm("You'll loose the current timer!")) {
+        
+    } else {
+       this.ngOnInit(); 
+    }
+    }*/
   }
 
   // start timer method
@@ -122,5 +132,4 @@ export class TimerComponent implements OnInit {
     var element = <HTMLInputElement> document.getElementById("btnplay");
     element.disabled = false;
   }
-
 }

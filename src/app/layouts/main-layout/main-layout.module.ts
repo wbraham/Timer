@@ -11,7 +11,7 @@ import {
   MatButtonModule,
   MatInputModule,
   MatRippleModule,
-  MatTooltipModule,
+  MatTooltipModule
 } from '@angular/material';
 @NgModule({
   imports: [

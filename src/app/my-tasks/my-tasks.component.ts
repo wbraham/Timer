@@ -8,6 +8,10 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class MyTasksComponent implements OnInit {
 
+  private startingtimeinput = '';
+  private endingtimeinput = '';
+  private timespentinput = '';
+
   meals: string[] = [
     'meal 1: crisp butty on toast',
     'meal 2: beans on toast drizzled with cheese sauce',

@@ -1,11 +1,97 @@
 <div class="main-content">
   <div class="container-fluid">
       <div class="row">
+            <!--<div class="col-md-12">
+                    <form>
+                    <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-danger">
+                                    <h4 class="card-title ">Enter A Task</h4>
+                                    <p class="card-category">Save a task you have accomplished</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <mat-form-field class="example-full-width">
+                                                        <textarea [(ngModel)]="description" name="description" matInput placeholder="Enter a description for your task here. (optional)"></textarea>
+                                                        </mat-form-field>
+                                                    </td>
+                                                    <td>
+                                                        <mat-form-field class="example-full-width">
+                                                        <input type="datetime" [(ngModel)]="startingtimeinput" name="startingtimeinput" matInput placeholder="Enter starting time">
+                                                        </mat-form-field>
+                                                    </td>
+                                                    <td>
+                                                        <mat-form-field class="example-full-width">
+                                                        <input type="datetime" [(ngModel)]="endingtimeinput" name="endingtimeinput" matInput placeholder="Enter ending time">
+                                                        </mat-form-field>
+                                                    </td>
+                                                    <td class="text-primary">
+                                                        <mat-form-field class="example-full-width">
+                                                        <input type="datetime" [(ngModel)]="timespentinput" name="timespentinput" matInput placeholder="Time passed on task">
+                                                        </mat-form-field>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div align="center">
+                                                <div class="stats">
+                                                    <button mat-raised-button type="submit" class="btn btn-success">Add task</button>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </form>
+        </div> -->    
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title">Add a completed task</h4>
+                    <p class="card-category">Already achieved some tasks? Add them here</p>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-12">
+                              <mat-form-field class="example-full-width">
+                                <input [(ngModel)]="description" name="description" matInput placeholder="Enter a description for your task here. (optional)">
+                              </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                              <mat-form-field class="example-full-width">
+                                <input type="datetime-local" step="1" required [(ngModel)]="startingtimeinput" name="startingtimeinput" matInput placeholder="Enter starting time">
+                              </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                              <mat-form-field class="example-full-width">
+                                <input type="datetime-local" step="1" required [(ngModel)]="endingtimeinput" name="endingtimeinput" matInput placeholder="Enter ending time">
+                            </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                              <mat-form-field class="example-full-width">
+                                <input type="time" step="1" required [(ngModel)]="timespentinput" name="timespentinput" matInput placeholder="Time passed on task">
+                            </mat-form-field>
+                            </div>
+                        </div>
+                        <button mat-raised-button type="submit" class="btn btn-danger pull-right">Add task</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
           <div class="col-md-12">
               <div class="card">
                   <div class="card-header card-header-danger">
                       <h4 class="card-title ">Completed Tasks</h4>
-                      <p class="card-category"> Here are your last 10 completed tasks</p>
+                      <p class="card-category">Latest completed tasks</p>
                   </div>
                   <div class="card-body">
                       <div class="table-responsive">

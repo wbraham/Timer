@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { DialogcontentComponent } from './dialogcontent/dialogcontent.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
   declarations: [
     AppComponent,
     MainLayoutComponent,
+    DialogcontentComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
