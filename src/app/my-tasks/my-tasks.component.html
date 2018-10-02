@@ -1,0 +1,54 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Completed Tasks</h4>
+                      <p class="card-category"> Here are your last 10 completed tasks</p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>
+                                      DESCRIPTION
+                                  </th>
+                                  <th>
+                                      STARTING TIME
+                                  </th>
+                                  <th>
+                                      ENDING TIME
+                                  </th>
+                                  <th>
+                                      TIME ON TASK
+                                  </th>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let meal of meals | paginate: { itemsPerPage: 10, currentPage: page }">
+                                      <td>
+                                        {{ meal }}
+                                      </td>
+                                      <td>
+                                          30/09/2018 20:00:00
+                                      </td>
+                                      <td>
+                                          30/09/2018 20:30:00
+                                      </td>
+                                      <td class="text-primary">
+                                          00:30:00
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="pagination">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
+
+</div>

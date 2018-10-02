@@ -1,0 +1,44 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Today's Task</h4>
+                      <p class="card-category">Start a task</p>
+                  </div>
+                  <div class="card-body">
+                        <div class="card-header">
+                                <h1 align="center" class="card-title" *ngIf="hours<10 && minutes<10 && seconds<10;">0{{hours}}:0{{minutes}}:0{{seconds}}</h1>
+                                <h1 align="center" class="card-title" *ngIf="hours<10 && minutes<10 && seconds>=10;">0{{hours}}:0{{minutes}}:{{seconds}}</h1>
+                                <h1 align="center" class="card-title" *ngIf="hours<10 && minutes>=10 && seconds<10;">0{{hours}}:{{minutes}}:0{{seconds}}</h1>
+                                <h1 align="center" class="card-title" *ngIf="hours<10 && minutes>=10 && seconds>=10;">0{{hours}}:{{minutes}}:{{seconds}}</h1>
+                                <h1 align="center" class="card-title" *ngIf="hours>=10 && minutes<10 && seconds<10;">{{hours}}:0{{minutes}}:0{{seconds}}</h1>
+                                <h1 align="center" class="card-title" *ngIf="hours>=10 && minutes<10 && seconds>=10;">{{hours}}:0{{minutes}}:{{seconds}}</h1>
+                                <h1 align="center" class="card-title" *ngIf="hours>=10 && minutes>=10 && seconds<10;">{{hours}}:{{minutes}}:0{{seconds}}</h1>
+                                <h1 align="center" class="card-title" *ngIf="hours>=10 && minutes>=10 && seconds>=10;">{{hours}}:{{minutes}}:{{seconds}}</h1>
+                            </div>
+                      <form>
+                          <div class="row">
+                              <div class="col-md-12">
+                                <label>Task description</label>
+                                <mat-form-field class="example-full-width">
+                                   <textarea [(ngModel)]="description" name="description" matInput placeholder="Enter a description for your task here. (optional)"></textarea>
+                                 </mat-form-field>
+                              </div>
+                          </div>
+                          <div align="center">
+                                <div class="stats">
+                                    <button mat-raised-button type="submit" id="btnplay" *ngIf="activePlayBtn===false;" (click)="playTime()" class="btn btn-success">&#9658;</button>
+                                    <button mat-raised-button type="submit" id="btnresume" *ngIf="activePlayBtn===true;" (click)="onResumeTime()" class="btn btn-success">&#9658;</button>
+                                    <button mat-raised-button type="submit" id="btnpause" (click)="pauseTime()" [disabled]="activePauseBtn===false" class="btn btn-info">&#9646;&#9646;</button>
+                                    <button mat-raised-button type="submit" (click)="stopTime()" [disabled]="activeStopBtn===false" class="btn btn-danger">&#9632;</button>
+                                </div>
+                            </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
