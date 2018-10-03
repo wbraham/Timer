@@ -37,13 +37,9 @@ export class TimerComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    /*if (this.activeStopBtn===true){
-      if (confirm("You'll loose the current timer!")) {
-        
-    } else {
-       this.ngOnInit(); 
+    if (this.activeStopBtn===true){
+      alert("You'll loose the current tracking!");
     }
-    }*/
   }
 
   // start timer method
