@@ -78,6 +78,8 @@ export class TimerComponent implements OnInit, OnDestroy {
     this.activePauseBtn = false; 
     this.activeStopBtn = true;
     console.log(this.time);
+    var elements = <HTMLInputElement> document.getElementById("btnplay");
+    elements.disabled = false;
   }
 
   // resume timer method
@@ -100,8 +102,8 @@ export class TimerComponent implements OnInit, OnDestroy {
         }
       }
     });
-    var element = <HTMLInputElement> document.getElementById("btnplay");
-    element.disabled = true;
+    var elements = <HTMLInputElement> document.getElementById("btnplay");
+    elements.disabled = true;
   }
 
   // stop timer method

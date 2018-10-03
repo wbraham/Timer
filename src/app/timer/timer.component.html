@@ -30,7 +30,7 @@
                           <div align="center">
                                 <div class="stats">
                                     <button mat-raised-button type="submit" id="btnplay" *ngIf="activePlayBtn===false;" (click)="playTime()" class="btn btn-success">&#9658;</button>
-                                    <button mat-raised-button type="submit" id="btnresume" *ngIf="activePlayBtn===true;" (click)="onResumeTime()" class="btn btn-success">&#9658;</button>
+                                    <button mat-raised-button type="submit" id="btnplay" *ngIf="activePlayBtn===true;" (click)="onResumeTime()" class="btn btn-success">&#9658;</button>
                                     <button mat-raised-button type="submit" id="btnpause" (click)="pauseTime()" [disabled]="activePauseBtn===false" class="btn btn-info">&#9646;&#9646;</button>
                                     <button mat-raised-button type="submit" (click)="stopTime()" [disabled]="activeStopBtn===false" class="btn btn-danger">&#9632;</button>
                                 </div>
