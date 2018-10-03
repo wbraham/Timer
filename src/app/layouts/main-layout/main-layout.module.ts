@@ -6,6 +6,8 @@ import { MainLayoutRoutes } from './main-layout.routing';
 import { TimerComponent } from '../../timer/timer.component';
 import { MyTasksComponent } from '../../my-tasks/my-tasks.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TasksService } from '../../shared/task.service';
+import { HttpModule } from '@angular/http';
 
 import {
   MatButtonModule,
@@ -13,6 +15,7 @@ import {
   MatRippleModule,
   MatTooltipModule
 } from '@angular/material';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -22,8 +25,10 @@ import {
     MatRippleModule,
     MatInputModule,
     MatTooltipModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpModule
   ],
+  providers: [TasksService],
   declarations: [
     TimerComponent,
     MyTasksComponent,

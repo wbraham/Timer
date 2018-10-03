@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Subscription, Observable} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
+import { TasksService } from '../shared/task.service';
+import { Task } from '../task.model';
 
 @Component({
   selector: 'timer',
@@ -31,7 +33,10 @@ export class TimerComponent implements OnInit, OnDestroy {
   //task ending time variable
   endedAt = '';
 
-  constructor() { }
+  //task duration variable
+  timeSpent = '';
+
+  constructor(private taskService : TasksService) { }
 
   ngOnInit() {
   }
@@ -47,7 +52,7 @@ export class TimerComponent implements OnInit, OnDestroy {
     var startDateTime = new Date();
     var startDate = startDateTime.getFullYear()+'-'+(startDateTime.getMonth()+1)+'-'+startDateTime.getDate();
     var startTime = startDateTime.getHours() + ":" + startDateTime.getMinutes() + ":" + startDateTime.getSeconds();
-    this.startedAt = 'date: '+startDate +' - time: '+startTime;
+    this.startedAt = startDate +'T'+startTime;
     this.timer = TimerObservable.create(0, 1000);
     this.subscription = this.timer.subscribe(t => {
       if (t<60){
@@ -114,19 +119,30 @@ export class TimerComponent implements OnInit, OnDestroy {
     var startDateTime = new Date();
     var startDate = startDateTime.getFullYear()+'-'+(startDateTime.getMonth()+1)+'-'+startDateTime.getDate();
     var startTime = startDateTime.getHours() + ":" + startDateTime.getMinutes() + ":" +startDateTime.getSeconds();
-    this.endedAt = 'date: '+startDate +' - time: '+startTime;
-    console.log('durée: '+this.hours+":"+this.minutes+":"+this.seconds);
+    this.endedAt = startDate +'T'+startTime;
+    this.timeSpent = this.hours+":"+this.minutes+":"+this.seconds;
     this.hours = 0;
     this.minutes = 0;
     this.seconds = 0;
     this.subscription.unsubscribe();
     if(this.description.length==0){
-      console.log('Message: NO TITLE');
-    } else {
-    console.log('Message: '+this.description);
-    }
-    console.log('Task started at: '+this.startedAt);
-    console.log('Task ended at: '+this.endedAt);
+      this.description = 'NO DESCRIPTION';
+    } 
+    const task: Task = {
+      description : this.description,
+      starttime : this.startedAt,
+      endtime : this.endedAt,
+      timespent : this.timeSpent
+    };
+    this.taskService.addTask(task.description,task.starttime,task.endtime,task.timespent).subscribe(
+      (res)=>{
+          console.log(res);
+          window.alert("Task successfully added!");
+      } ,
+      (error) => {
+        console.log(error);
+      }
+    );
     var element = <HTMLInputElement> document.getElementById("btnplay");
     element.disabled = false;
   }

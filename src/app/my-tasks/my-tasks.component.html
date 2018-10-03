@@ -80,7 +80,7 @@
                             </mat-form-field>
                             </div>
                         </div>
-                        <button mat-raised-button type="submit" class="btn btn-danger pull-right">Add task</button>
+                        <button mat-raised-button type="submit" (click)="addTaskManually()" class="btn btn-danger pull-right">Add task</button>
                         <div class="clearfix"></div>
                     </form>
                 </div>
@@ -111,18 +111,18 @@
                                   </th>
                               </thead>
                               <tbody>
-                                  <tr *ngFor="let meal of meals | paginate: { itemsPerPage: 10, currentPage: page }">
+                                  <tr *ngFor="let task of myTask | paginate: { itemsPerPage: 5, currentPage: page}">
                                       <td>
-                                        {{ meal }}
+                                        {{ task.split('$#')[0] }}
                                       </td>
                                       <td>
-                                          30/09/2018 20:00:00
+                                            {{ task.split('$#')[1] }}
                                       </td>
                                       <td>
-                                          30/09/2018 20:30:00
+                                            {{ task.split('$#')[2] }}
                                       </td>
                                       <td class="text-primary">
-                                          00:30:00
+                                            {{ task.split('$#')[3] }}
                                       </td>
                                   </tr>
                               </tbody>
@@ -136,5 +136,4 @@
   <div class="pagination">
     <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
-
 </div>
