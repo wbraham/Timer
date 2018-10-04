@@ -32,7 +32,6 @@ Sincerely,
 
 ## Links:
 
-+ [Live Preview](docker link)
 + [Github Repository](https://github.com/wbraham/Timer)
 + [My Portfolio](http://www.wbraham.me)
 
@@ -46,7 +45,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 4. Open Terminal
 5. Go to the project folder.
 6. Make sure you have already installed [Angular CLI](https://github.com/angular/angular-cli).
-7. Run in terminal: ```npm install``` to install al the npm packages.
+7. Run in terminal: `npm install` to install al the npm packages.
 8. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
-9. Run in another terminal window: ```sudo service mongod start``` to launch MongoDB.
-10. One last step, run in another terminal window: ```node .``` to start your Node server.
+9. Run in another terminal window: `sudo service mongod start` to launch MongoDB.
+10. One last step, run in another terminal window: `node .` to start your Node server.
+
+I have exported my database, you could import it running this command :
+`mongoimport --db music --collection jazz --file database.json`
