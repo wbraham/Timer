@@ -22,6 +22,7 @@ export class MyTasksComponent implements OnInit {
   //task duration variable
   timespentinput = '';
 
+  // array populated with the json response
   tasks : [{
     description : string,
     starttime : string,
@@ -29,10 +30,13 @@ export class MyTasksComponent implements OnInit {
     timespent : string
   }]
 
+  // array of Tasks used while displaying tasks
   myTask: string[] = [];
 
+  // pagination starting page
   page: number = 1;
 
+  // Injection of our TaskService
   constructor(private taskService : TasksService) { 
     this.displayTasks();
   }
@@ -52,8 +56,7 @@ export class MyTasksComponent implements OnInit {
       }
      },
       (error)=>{console.log(error)
-       console.log('not found!');
-        }
+      }
     );
 
   }
@@ -73,9 +76,10 @@ export class MyTasksComponent implements OnInit {
           console.log(res);
           window.alert("Task successfully added!");
           location.reload();
-      } ,
+      },
       (error) => {
         console.log(error);
+        alert("Can\'t save task");
       }
     );
   }

@@ -1,53 +1,6 @@
 <div class="main-content">
   <div class="container-fluid">
-      <div class="row">
-            <!--<div class="col-md-12">
-                    <form>
-                    <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header card-header-danger">
-                                    <h4 class="card-title ">Enter A Task</h4>
-                                    <p class="card-category">Save a task you have accomplished</p>
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <mat-form-field class="example-full-width">
-                                                        <textarea [(ngModel)]="description" name="description" matInput placeholder="Enter a description for your task here. (optional)"></textarea>
-                                                        </mat-form-field>
-                                                    </td>
-                                                    <td>
-                                                        <mat-form-field class="example-full-width">
-                                                        <input type="datetime" [(ngModel)]="startingtimeinput" name="startingtimeinput" matInput placeholder="Enter starting time">
-                                                        </mat-form-field>
-                                                    </td>
-                                                    <td>
-                                                        <mat-form-field class="example-full-width">
-                                                        <input type="datetime" [(ngModel)]="endingtimeinput" name="endingtimeinput" matInput placeholder="Enter ending time">
-                                                        </mat-form-field>
-                                                    </td>
-                                                    <td class="text-primary">
-                                                        <mat-form-field class="example-full-width">
-                                                        <input type="datetime" [(ngModel)]="timespentinput" name="timespentinput" matInput placeholder="Time passed on task">
-                                                        </mat-form-field>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <div align="center">
-                                                <div class="stats">
-                                                    <button mat-raised-button type="submit" class="btn btn-success">Add task</button>
-                                                </div>
-                                            </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </form>
-        </div> -->    
+      <div class="row">  
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header card-header-danger">
@@ -95,7 +48,7 @@
                   </div>
                   <div class="card-body">
                       <div class="table-responsive">
-                          <table class="table">
+                          <table class="table" *ngIf="myTask.length>0">
                               <thead class=" text-primary">
                                   <th>
                                       DESCRIPTION
@@ -116,17 +69,18 @@
                                         {{ task.split('$#')[0] }}
                                       </td>
                                       <td>
-                                            {{ task.split('$#')[1] }}
+                                        {{ task.split('$#')[1] }}
                                       </td>
                                       <td>
-                                            {{ task.split('$#')[2] }}
+                                        {{ task.split('$#')[2] }}
                                       </td>
                                       <td class="text-primary">
-                                            {{ task.split('$#')[3] }}
+                                        {{ task.split('$#')[3] }}
                                       </td>
                                   </tr>
                               </tbody>
                           </table>
+                          <h3 class="text-primary" align="center" *ngIf="myTask.length<=0">No Tasks Available !</h3>
                       </div>
                   </div>
               </div>

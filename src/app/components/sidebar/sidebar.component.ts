@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-declare const $: any;
-declare interface RouteInfo {
+declare interface Routing {
     path: string;
     title: string;
     icon: string;
     class: string;
 }
-export const ROUTES: RouteInfo[] = [
+export const ROUTES: Routing[] = [
     { path: '/timer', title: 'Timer',  icon:'dashboard', class: '' },
     { path: '/my-tasks', title: 'My Tasks',  icon:'content_paste', class: '' },
 ];

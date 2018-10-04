@@ -10,10 +10,16 @@ import { Task } from '../task.model';
   styleUrls: ['./timer.component.css']
 })
 export class TimerComponent implements OnInit, OnDestroy {
+
+  // total counted seconds
   private time = 0;
+
+  //time variables
   private seconds = 0;
   private minutes = 0;
   private hours = 0;
+
+  // subscription for timer
   private subscription: Subscription;
 
   //seconds counter
@@ -72,7 +78,6 @@ export class TimerComponent implements OnInit, OnDestroy {
     this.activePlayBtn = false;
     this.activePauseBtn = true;
     this.activeStopBtn = true;
-    console.log(this.startedAt);
   }
 
   // pause timer method
@@ -82,7 +87,6 @@ export class TimerComponent implements OnInit, OnDestroy {
     this.activePlayBtn=true;
     this.activePauseBtn = false; 
     this.activeStopBtn = true;
-    console.log(this.time);
     var elements = <HTMLInputElement> document.getElementById("btnplay");
     elements.disabled = false;
   }
@@ -117,6 +121,7 @@ export class TimerComponent implements OnInit, OnDestroy {
     this.activeStopBtn = false;
     this.activePauseBtn = false;
     var startDateTime = new Date();
+
     var startDate = startDateTime.getFullYear()+'-'+(startDateTime.getMonth()+1)+'-'+startDateTime.getDate();
     var startTime = startDateTime.getHours() + ":" + startDateTime.getMinutes() + ":" +startDateTime.getSeconds();
     this.endedAt = startDate +'T'+startTime;
@@ -141,6 +146,7 @@ export class TimerComponent implements OnInit, OnDestroy {
       } ,
       (error) => {
         console.log(error);
+        alert("Can\'t save task");
       }
     );
     var element = <HTMLInputElement> document.getElementById("btnplay");
