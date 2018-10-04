@@ -32,4 +32,9 @@ export class TasksService {
     return this.http.get('http://localhost:3000/api/tasks?filter[order]=starttime%20DESC',httpOptions)
       .pipe(map(res =>  res));
   }
+
+  findTask(searchDescription){
+    return this.http.get('http://localhost:3000/api/tasks?filter[where][description]='+searchDescription,httpOptions)
+      .pipe(map(res =>  res));
+  }
 }

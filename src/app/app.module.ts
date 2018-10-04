@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { TasksService } from './shared/task.service';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -14,13 +16,14 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
     FormsModule,
     ComponentsModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   declarations: [
     AppComponent,
     MainLayoutComponent,
   ],
-  providers: [],
+  providers: [TasksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Subscription, Observable} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
 import { TasksService } from '../shared/task.service';
-import { Task } from '../task.model';
+import { Task } from '../model/task.model';
 
 @Component({
   selector: 'timer',
@@ -55,10 +55,10 @@ export class TimerComponent implements OnInit, OnDestroy {
 
   // start timer method
   playTime(){
-    var startDateTime = new Date();
-    var startDate = startDateTime.getFullYear()+'-'+(startDateTime.getMonth()+1)+'-'+startDateTime.getDate();
-    var startTime = startDateTime.getHours() + ":" + startDateTime.getMinutes() + ":" + startDateTime.getSeconds();
-    this.startedAt = startDate +'T'+startTime;
+    var fullDate= new Date().toISOString().substr(0, 19);
+    var startDate = fullDate.split('T')[0];
+    var startTime = fullDate.split('T')[1];
+    this.startedAt = "Date: "+startDate+", Time: "+startTime;
     this.timer = TimerObservable.create(0, 1000);
     this.subscription = this.timer.subscribe(t => {
       if (t<60){
@@ -120,11 +120,11 @@ export class TimerComponent implements OnInit, OnDestroy {
     this.activePlayBtn=false;
     this.activeStopBtn = false;
     this.activePauseBtn = false;
-    var startDateTime = new Date();
 
-    var startDate = startDateTime.getFullYear()+'-'+(startDateTime.getMonth()+1)+'-'+startDateTime.getDate();
-    var startTime = startDateTime.getHours() + ":" + startDateTime.getMinutes() + ":" +startDateTime.getSeconds();
-    this.endedAt = startDate +'T'+startTime;
+    var fullDate = new Date().toISOString().substr(0, 19);
+    var endDate = fullDate.split('T')[0];
+    var endTime = fullDate.split('T')[1];
+    this.endedAt = "Date: "+endDate+", Time: "+endTime;
     this.timeSpent = this.hours+":"+this.minutes+":"+this.seconds;
     this.hours = 0;
     this.minutes = 0;

@@ -28,7 +28,6 @@ import {
     NgxPaginationModule,
     HttpModule
   ],
-  providers: [TasksService],
   declarations: [
     TimerComponent,
     MyTasksComponent,
