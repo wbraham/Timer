@@ -21,6 +21,7 @@ As for the improvements and maybe upcoming features, I think we could have added
 What I liked and didn't like about this project : 
 
 [✓] I really appreciated the freedom you gave me to choose the stack which suits me the best.
+
 [✓] I also liked the idea of the project, as I'm using this kind of app in my dailylife.
 
 [X] The only thing missing in the assignment specifications book was the last deadline for the deposit of the app. (I hope I'm not late).
