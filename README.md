@@ -1,6 +1,7 @@
 # [TIMER APP By Walid Braham] - www.wbraham.me
 
 ![alt text](http://wbraham.me/assets/img/screenshot1.jpg "TIMER APP")
+![alt text](http://wbraham.me/assets/img/screenshot2.jpg "TIMER APP")
 
 I have developed this app as a request from Incloud Engineering GmbH to evaluate my skills for an internship as a web developer.
 
@@ -18,16 +19,21 @@ I'm overall happy with the resulting app and what I have achieved in a short tim
 As for the improvements and maybe upcoming features, I think we could have added some stats/achievements to boost creativity, sharing stats/achievements with friends, notifications, a pomodoro mode, possibility to remove and edit existing tasks and why not a mobile app or a browser extension.
 
 What I liked and didn't like about this project : 
+
 [✓] I really appreciated the freedom you gave me to choose the stack which suits me the best.
 [✓] I also liked the idea of the project, as I'm using this kind of app in my dailylife.
 
 [X] The only thing missing in the assignment specifications book was the last deadline for the deposit of the app. (I hope I'm not late).
 
+Looking forward to hear from you, and join your team for bigger projects.
+
+Sincerely,
+
 ## Links:
 
 + [Live Preview](docker link)
 + [Github Repository](https://github.com/wbraham/Timer)
-+ [Portfolio](http://www.wbraham.me)
++ [My Portfolio](http://www.wbraham.me)
 
 ## Installation
 
@@ -43,7 +49,3 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 8. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 9. Run in another terminal window: ```sudo service mongod start``` to launch MongoDB.
 10. One last step, run in another terminal window: ```node .``` to start your Node server.
-
-Looking forward to hear from you, and join your team for bigger projects.
-
-Sincerely,
