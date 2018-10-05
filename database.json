@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5bb6844494b9094d5257946d"},"description":"First Task","starttime":"Date: 2018-10-04, Time: 20:00:00","endtime":"Date: 2018-10-04, Time: 20:00:30","timespent":"00:00:30"}
+{"_id":{"$oid":"5bb6845594b9094d5257946e"},"description":"Second Task","starttime":"Date: 2018-10-04, Time: 21:21:17","endtime":"Date: 2018-10-04, Time: 21:21:25","timespent":"0:0:8"}
