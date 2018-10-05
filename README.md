@@ -51,4 +51,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 10. One last step, run in another terminal window: `node .` to start your Node server.
 
 I have exported my database, you could import it running this command :
-`mongoimport --db music --collection jazz --file database.json`
+`mongoimport --db demo --collection task --file database.json`
